@@ -12,8 +12,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 | Xin Zhong | <http://www.larryai.com> | AiArt@HDU |
 
 > 通过向以下 issues 评论的形式，将您的博客加入友链列表
-
-  [友情链接](https://github.com/HuJJ-NB/HuJJ-NB/issues/6)
+> [友情链接](https://github.com/HuJJ-NB/HuJJ-NB/issues/6)
 
 ## 最近更新
 
