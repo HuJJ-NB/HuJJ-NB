@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/HuJJ-NB/gitblog</id><title>RSS feed of HuJJ-NB's gitblog</title><updated>2022-10-24T10:35:35.896318+00:00</updated><author><name>HuJJ-NB</name><email>hduhujj@outlook.com</email></author><link href="https://github.com/HuJJ-NB/gitblog"/><link href="https://raw.githubusercontent.com/HuJJ-NB/gitblog/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/HuJJ-NB/gitblog/issues/18</id><title>新学期新计划</title><updated>2022-10-24T10:35:36.130622+00:00</updated><content type="html"><![CDATA[<ul>
+<li>学校老师这边有个项目</li>
+<li>
+操作系统比赛<ul>
+<li><input disabled="" type="checkbox"> <a href="https://github.com/LearningOS/rust-based-os-comp2022/">训练营</a></li>
+<li><input disabled="" type="checkbox"> os比赛</li>
+</ul>
+</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/18" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-10-24T03:00:57+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/17</id><title>PD虚拟机Parallels Tools和内核make install的冲突</title><updated>2022-10-24T10:35:36.219494+00:00</updated><content type="html"><![CDATA[<p>一开始发现错误是每次<code>make</code>都会出现一个报错，但是重新<code>make</code>就好了。部分错误信息大致如下：</p>
+<pre><code class="language-shell">scripts/selinux/mdp/mdp.c:2
+    #include &lt;generic/autoconf.h&gt;
+             ^～～～～～～～～～～^
+</code></pre>
+<p>复现一次需要一个小时，不太清楚细节了，大意为找不到这个头文件。</p>
+<p>之后发现无法<code>make prepare</code>，不确定做了什么改动，重新<code>make</code>同样报错。使用<code>make clean</code>无法重置，但<code>make mrproper</code>可以。</p>
+<p>之后跟踪发现，<code>make install</code>前，<code>./include/generic/autoconf.h</code>文件存在，之后便不存在了。</p>
+<p>观察这个阶段的报错，发现<code>Error: xxxxxxxx</code>和<code>parallels tools</code>有关，什么二进制找不到什么的，然后还有什么构建失败。根据错误信息查看了<code>/var/log/parallels-tools-install.log</code>，里面说编译错误的文件路径根本不存在，难以跟踪。</p>
+<p>没有研究<code>make install</code>的具体过程，可以肯定安装<code>parallels tools</code>之后，构建内核时试图编译<code>parallels tools</code>，必然会导致问题发生。解决方案大致为两种：不安装<code>parallels tools</code>；避免构建内核时编译<code>parallels tools</code>。</p>
+<p>细致研究<code>make install</code>的流程之后应该会有其他更优雅的办法，目前暂且存疑。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/17" rel="alternate"/><category term="学习"/><published>2022-09-06T15:34:53+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/16</id><title>2022下学期开学一周总结</title><updated>2022-10-24T10:35:36.319687+00:00</updated><content type="html"><![CDATA[<blockquote>
+<p>暑假复工三天之后又摸鱼了</p>
+</blockquote>
+<p>这周在看<em><strong>计算机系统基础</strong></em>，貌似内容都学过，慢慢看了一段时间，之后打算跳着看了。但是，这本书可以说拿来启蒙是本很不错的书，很多东西能联系起来很系统地阐述，有些思想也很深入，或者说一些概念在之前的学习中都已经在我的脑海里了，但是很难表达，书里的说法我认为很贴切。</p>
+<p>书看了之后的计划大概是看<em><strong>xv6</strong></em>的源码，还有本<em><strong>CSAPP</strong></em>,这本太厚了，不知道什么时候能有勇气开始看。</p>
+<p>这学期应该是要开始准备数学和英语了，然后就是啃啃操作系统啥的。课余的话，周一晚上就去社团打打拳，再抽一天去游一个小时泳，当然得再来一天晚上去和女朋友吃饭。</p>
+<p>这周把操作系统课上的实验一二给提前做了，编译内核和添加系统调用，大一下跟这贾刚勇老师上科研实践的时候做过，这俩还是很快的，而且很容易，但是隔了这么久我读代码的能力和查资料的能力都上去了，大一时候搞不明白的东西现在都有了更深的理解。</p>
+<p>添加系统调用号网上有两个办法，一个是在架构相关的目录下修改一个<code>.tbl</code>文件，一个是在<code>./include/uapi/asm-generic/unistd.h</code>中添加宏定义。我不确定两个文件的关联，我用的是后一种办法，因为我认为大部分系统调用的实现是可以做到架构无关的。</p>
+<p>目前我对<code>unistd.h</code>这个文件的理解是一个Unix（uni）的标准库（std），定义了一些内核中的符号常量。而且，之后可以用<code>make headers &amp;&amp; make headers_install INSTALL_HDR_PATH=/usr</code>命令将自定义构建的内核所提供的所有头文件安装到编译器默认使用的头文件的位置（<code>/usr/include</code>），这样一来，就可以直接通过<code>#include &lt;unistd.h&gt;</code>来包涵关于自定义系统调用函数的宏定义，进而用<code>__NR_</code>为前缀的宏定义来代替自定义的系统调用号。</p>
+<p>此外，以<code>SYS_</code>为前缀的宏定义和以<code>__NR_</code>为前缀的作用一致，但目前不确定怎么产生这样的文件，这个头文件貌似是架构相关的。</p>
+<p>目前对于构建内核的流程，大体上是用<code>make oldconfig</code>将可用的<code>.config</code>文件拷贝到源码根目录，再通过<code>make menuconfig</code>做一些自定义，之后<code>make -jx &amp;&amp; make modules_install -jx INSTALL_MOD_STRIP=1 &amp;&amp; make install</code>，若是有构件头文件库的需求，还需要<code>make headers -jx &amp;&amp; make headers_install INSTALL_HDR_PATH=/usr</code>。</p>
+<p><code>INSTALL_MOD_STRIP=1</code>这个选项是对模块进行裁剪，排除不必要的模块，防止之后<code>make install</code>生成的镜像过大，启动过慢甚至无法启动。</p>
+<p><code>INSTALL_HDR_PATH=/usr</code>这个选项是定义库文件安装的位置。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/16" rel="alternate"/><category term="学习"/><published>2022-09-06T05:53:23+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/15</id><title>复工</title><updated>2022-10-24T10:35:36.404892+00:00</updated><content type="html"><![CDATA[<p>终于开始干活了，暑假还有那么二十天，先搞搞编译器吧。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/15" rel="alternate"/><category term="琐记"/><published>2022-08-09T05:45:43+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/14</id><title>22年 夏 7月21日</title><updated>2022-10-24T10:35:36.484671+00:00</updated><content type="html"><![CDATA[<p>这个假期强鼓精神磨了两个星期洋工，又开始吃了睡睡了吃了。也不知道能不能打起精神好好做事情。</p>
+<p>在看长夜余火，很不错的小说，还挺有意思，男主喜欢的歌都还挺有味道。<strong>新裤子乐队</strong>的<em><strong>没有理想的人不伤心</strong></em>，好听。</p>
+<p>昨天家里有点麻烦事，晚上边想事情边看小说，看到三四点，剧情突然有了点转折，看得一个激灵。坐起来开了灯，戴上耳机听着歌，边看。突然就感觉很有力量，挺他妈带感。</p>
+<p>早上要帮忙解决那件麻烦事，但是通了宵有点困，下楼买了4块钱的大瓶可乐，很冰的那种，拿来提神。但在走在小区楼下突然不想回家，就在楼下走，戴着耳机，看着小说，喝着可乐。</p>
+<p>有人晨跑，带着运动耳机，一圈又一圈，在我边上路过许多次，她可能觉得我很奇怪，大清早的，穿着拖鞋，戴着耳机，看着手机，喝着可乐绕圈。</p>
+<p>中间有一段没有树荫，太阳洒在脸上，八点四十五的阳光，真他妈热。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/14" rel="alternate"/><category term="琐记"/><published>2022-07-21T02:22:51+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/13</id><title>编译器</title><updated>2022-10-24T10:35:36.576426+00:00</updated><content type="html"><![CDATA[<p>记录一下编译原理课大作业。</p>
+<h2>进度</h2>
+<p>目前只做了词法分析和语法分析，其中词法分析用了PCRE的库，语法分析采用递归下降的办法自顶向下实现。</p>
+<h2>词法分析</h2>
+<p>我写了几条正则，记录了一下原始字符串和读取的位置，每次都按顺序匹配正则规则，匹配成功就返回一个<code>token</code>，然后修改读取位置、行号等一系列需要维护的信息，这个还是很简单的。</p>
+<p>后续希望的，主要就是去掉PCRE的依赖，所以还是要自己实现一下比较好，应该不麻烦。</p>
+<h2>语法分析</h2>
+<p>语法分析我用了带回溯的LL分析，用递归下降的办法，想过用LR但是这一部分上课没听，课件有点抽象，而且LL分析貌似在主流编译器中用得更多，我也不知道为啥。其实一开始也考虑了能不能用LL(1)，这样不用回溯，但是chuj说这样后续文法可读性变差了，语义分析也不好做，我觉得有点道理。</p>
+<p>目前碰到的最大的问题是带回溯的算法不好定位出错，一个产生式如果匹配不成功，该不该报错，如果<code>E-&gt;A|B</code>，A匹配不成功，B成功了，A不该报错，AB都不成功，那具体该哪报错呢，E报错吗？可是算法最终递归和回溯之后，都是回到最顶层，难道最后只能输出一句开始符号不能成功匹配？递归时函数携带的信息太少了，以至于很难得到准确的出错位置。</p>
+<p>兴许可以在语法分析树的单元里面保存这些信息，同样是LL分析，LL(1)能避免这样的问题肯定是有比没有回溯来干扰更本质的原因的，它没有回溯意味着，每一个产生式都携带了更精确的信息，也许分析这些信息，能找到问题的答案。</p>
+<p>毕竟chuj研究了很多项目的源码，他说gcc也是用的递归下降，看样子递归下降是可以有办法精确定位错误位置的。</p>
+<h2>计划</h2>
+<p>最后就画个饼吧，一方面，很多定长的数据结构是不符合工业要求的，还是要多采用用更先进的方式，工作量也不大；然后，语义分析和后端的部分也要做做完吧，希望暑假能有动力。</p>
+<ul>
+<li><input disabled="" type="checkbox"> 生成LR(1)项目集</li>
+<li><input disabled="" type="checkbox"> 语义分析</li>
+<li><input disabled="" type="checkbox"> 中间代码生成</li>
+<li><input disabled="" type="checkbox"> 编译后端（暂定目标为生成risc-V IM64指令集的ELF）</li>
+<li><input disabled="" type="checkbox"> 更符合工业标准的代码</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/13" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-06-10T18:04:49+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/12</id><title>不能再摆了</title><updated>2022-10-24T10:35:36.675471+00:00</updated><content type="html"><![CDATA[<h2>好久没写了</h2>
+<p>学期初我一天能肝十五六个小时，不管什么课都抱着电脑敲敲敲。</p>
+<p>四月多的时候女朋友说我陪她太少了，就说陪她玩，玩了几天五一放假接着玩。回来正好上一个小项目写得差不多，下一个还没开始，动力直接锐减，于是连着一个月每天在寝室刷知乎。</p>
+<p>一刷知乎吧，就停不下来，作息也乱了，DDL也开始攒了，现在期末了，啥都干不完，尤其是学期初被我拿来敲代码的几门专业课，预习的压力就上来了。</p>
+<p>每天浑浑噩噩。</p>
+<p>希望能干完吧。</p>
+<h2>要干的活</h2>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 公选课大作业</li>
+<li><input checked="" disabled="" type="checkbox"> 数据库DBMS研究论文</li>
+<li><input checked="" disabled="" type="checkbox"> 编译原理作业</li>
+<li><input checked="" disabled="" type="checkbox"> 编译原理算法实验</li>
+<li><input checked="" disabled="" type="checkbox"> 编译器开发</li>
+<li><input checked="" disabled="" type="checkbox"> 计组思政</li>
+<li><input checked="" disabled="" type="checkbox"> 计网实验</li>
+<li><input checked="" disabled="" type="checkbox"> 计网思政</li>
+</ul>
+<h2>期望中的假期安排</h2>
+<ul>
+<li><input disabled="" type="checkbox"> 跟着B站的视频学一下vim开发环境的插件配置</li>
+<li><input disabled="" type="checkbox"> 跟着<a href="https://web.stanford.edu/class/cs346/2015/redbase.html">RedBase</a>撸一个数据库</li>
+<li><input disabled="" type="checkbox"> 撸完编译器 #13</li>
+<li><input disabled="" type="checkbox"> 一生一芯继续写</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/12" rel="alternate"/><category term="TODO"/><category term="琐记"/><published>2022-06-06T15:43:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/11</id><title>博客搭建</title><updated>2022-10-24T10:35:36.758043+00:00</updated><content type="html"><![CDATA[<ul>
+<li><input disabled="" type="checkbox"> 开发分支与master分支分离</li>
+<li><input disabled="" type="checkbox"> 在<code>get_issues()</code>中判断作者，减掉<code>is_me()</code>函数</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/11" rel="alternate"/><category term="TODO"/><published>2022-05-13T19:46:38+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/7</id><title>工作流优化</title><updated>2022-10-24T10:35:36.839090+00:00</updated><content type="html"><![CDATA[<ul>
+<li>
+vscode下工作流优化<ul>
+<li><input disabled="" type="checkbox"> verilog工作环境</li>
+<li><input disabled="" type="checkbox"> vivado安装与vscode配置</li>
+</ul>
+</li>
+<li>
+shell下工作流优化<ul>
+<li><input disabled="" type="checkbox"> vim下的C开发环境</li>
+<li><input disabled="" type="checkbox"> ranger和fzf的配置</li>
+</ul>
+</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/7" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-05-13T11:11:26+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/6</id><title>友情链接</title><updated>2022-10-24T10:35:36.923080+00:00</updated><content type="html"><![CDATA[<p>这个 Issue 是友情链接的 Issue, 如果你想加到友情链接里，请在这条 Issue 上评论，我打心后会自动加到友情链接里。感谢大家。</p>
+<p>格式请参考我的 comment</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> switch</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/6" rel="alternate"/><category term="Friends"/><published>2022-05-13T10:56:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/5</id><title>记录的价值</title><updated>2022-10-24T10:35:36.997228+00:00</updated><content type="html"><![CDATA[<h1>论记录中蕴藏的震撼人心的时间力量</h1>
+<h2>2022年看1920年的上海</h2>
+<p>上近代史课，老师放了一段1920年的上海的视频，泛黄的画面，镜头应是一人站立手持，正对着面前的街道拍摄，从一条街一路后退，路上有像骆驼祥子一样的车夫，拉着客人，也有衣着华贵的妇人穿过街道，上海外滩的路旁，一辆辆轿车停放整齐，这时老师说，那个时候亚洲最繁华的就是上海，整个东方没有地方能见到几辆轿车。</p>
+<p>我模糊地感受到拍视频的人似乎很自豪，他们站在时代之上。这段录像好像承载了一种现在再也找不回的东西，从现在来看，现在的上海更加繁华，甚至一些新一线城市二线也有当时上海的繁荣，站在时间之后回顾，他们的自豪，茫茫然中带着的那一点苍白无力，反而更让时间显得不可阻挡。</p>
+<p>我想起来星际牛仔中的Faye，她丢失了五十年的岁月和过往的记忆，重又收到五十年前自己录的幼稚可笑的录像带时，她是什么心情？</p>
+<h2>记录的难得</h2>
+<p>我想，也许该记录些什么了，但是现在的记录太方便了，我很难想象我五十年后能对着我现在的自拍或者录像哭。</p>
+<p>现在的人有的一天的动态能po上9张照片，也有的人可以做到每天不止发一条，他们五十年后回来看他们的动态，他们能感受到那种力量吗？也许在记录失去了困难的时候，它就少了悲壮的美，当回顾往事不再是历历在目，而是历历在手机、在相册，当你可以像黑镜中的利亚姆一样，记得所有的回忆，那回忆还会美好吗？我不确定。</p>
+<p>也许记录的力量便是来源于时间，看着被淘汰的技术记录下的被时间抛弃的时间与被抛弃的时间里的陈旧的世界，从前的日常反而光怪陆离，若说冥冥中有着一种宇宙悲壮主义文学，兴许便是追求的这种效果。那在这个什么都方便的时代，什么才是难得的呢，科学在杀死艺术吗？</p>
+<hr />
+<h3>Tips</h3>
+<p>想表达感慨，但是发现总是词不达意，想了想，算了吧，多几个哈姆雷特也好。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/5" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:51:01+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/4</id><title>电子游戏与数字素养-对于游戏与历史的思考</title><updated>2022-10-24T10:35:37.077931+00:00</updated><content type="html"><![CDATA[<h1>游戏与历史</h1>
+<h2>游戏，重构历史？歪曲历史？</h2>
+<p>说到游戏与历史，再加上重构这个词，我想到的第一件事是，没多久之前，有一很流行的言论是《王者荣耀》歪曲历史事实，动摇了青少年的历史观念，破坏了民族的共同文化记忆的传承。</p>
+<p>历史，仿佛是很严肃的事，游戏的载体，尤其是《王者荣耀》这般对历史人物的形象、关系等做了不同程度的二次创作的作品，仿佛便是在亵渎历史的严肃性，仿佛便是在伤害史实、伤害传统文化。</p>
+<p>其实，在其他各种类型的游戏，包括其他类型的各种文艺作品中，基于历史的片段去再创事很常见的现象，《真·三国无双》中的许多故事情节，也与其立足的三国历史有所不同。</p>
+<p>甚至，我们熟知的《三国演义》也有很大的虚构成分，用现在批判王者荣耀的话来说，它甚至借贬低周瑜而抬高了诸葛亮，不单单是影响当时的人民，从那开始朝代几经更迭，到了现在，它造成的影响仍然不能消弭，不研究历史的人说到诸葛亮，就想到<em>既生瑜何生亮</em>，想到诸葛亮“气死”周瑜。</p>
+<p>另外，现在热播的各种宫斗剧、宅斗剧的主人公的外在的生活状态、内在的情感世界、客观的人际关系等，也和真实的历史完全相悖。</p>
+<p>也许有人会说，《王者荣耀》歪曲的更为宏大的历史走向，宫斗剧只是改编了一些情情爱爱的细节。但其实在现在的历史研究中，历史研究的重心一直在下移，王侯将相的日常生活乃至平民百姓的日常生活，都早已纳入研究范围。同时，一些宫斗剧中，对封建时期人民的情感世界的改编若是有人当真，便是变相地否认了我们近代以来进行的各种反对封建礼教的运动，影响未必比歪曲了荆轲的性别小。</p>
+<p>那么，我们的历史，真的这么脆弱吗，我想在一定范围内的改编是可以接受的，需要警惕的是借着改编为由却夹带了历史虚无主义的私货的行为，对于一些无伤大雅的、为了剧情的改动，可以放开权限，但是这个衡量的度，仍是需要真正专业的人去界定，它涉及到的关系错综复杂，文化上的、民俗上的、社会上的、艺术上的、心理上的，这不是普罗大众可以随心所欲吃瓜议论的地方。</p>
+<p>同样，我们不需要也不太应该对一些作品对与历史事实的借用与改编喊打喊杀。真正应该做的是多去了解更可信的历史的同时，站在已有知识的背景上，更好地欣赏二次创作的故事中承载的新的内容、新的价值。</p>
+<p>所以，游戏重构历史，是客观必然存在的，游戏基于日常生活经验而又借助虚拟的世界超越了这些经验，它重构的不只是历史，它重构了我们世界观中的许多内容，我们应该接纳这些新的概念，去享受那些在脱离现实的概念集合中才能感受到的光怪陆离的故事。</p>
+<h2>游戏能否再现历史</h2>
+<blockquote>
+<p><em>人不能两次踏入同一条河流</em>
+—Herakleitus</p>
+</blockquote>
+<p>严格来说游戏是不能够再现历史的，我们也永远不能完全还原历史，但是我们却能透过时间的指缝去一窥历史斑驳的剪影。</p>
+<p>关于再现这个词，最让我感动的一件事是，几年前巴黎圣母院失火，一周之内，所有玩家可以没有任何门槛地在育碧的官方商城免费购买《刺客信条·大革命》的游戏本体，且对于近期购买的玩家，育碧也会邮件联系并退款。</p>
+<p>刺客信条系列中，有一个神奇的设定是记忆可以通过血脉去继承，然后又融合了很多基督教的典故，又结合了一些历史事件，构造一个很庞大的虚构历史，在这个历史中，刺客组织与圣殿骑士不断征战。</p>
+<p>圣殿骑士意图掌控史前文明留下的圣物金苹果，用它来控制人心，实现人类思想的大一统，建立一个人人都善良友爱的美好世界，刺客组织认为这是违背人类本身的价值的。最后到了现代，圣殿骑士暗中掌控了很多大国，有庞大的经济实力，研究出了可以根据血脉找到一个人的祖先的记忆的办法，于是许多刺客的后人被找上了，圣殿骑士组织让他们通过机器回到祖先的记忆里，去寻找金苹果的所在。玩家也跟着这些角色，一同回到了一个个伟大的时代。</p>
+<p>一代刺客信条可能囿于时代因素，只能再现了一部分中世纪的叙利亚风情；从二代开始，16世纪的意大利与威尼斯、独立战争前后的美国、法国大革命时的欧洲，玩家跟着游戏的镜头穿越一座座富有时代特色的建筑，看着数百年前的太阳透过数百年前的房屋照射在数百年前的泥土上，挤过身着数百年前的服饰的人群。</p>
+<p>它对历史做了很大的改编，但是始终基于正确的历史价值观，没有颠覆是非，只是赋予了本就朦胧的历史一种更加神话的视角，反而，君士坦丁堡、圣母百花大教堂、巴黎市政厅、杜乐丽宫、埃及金字塔等一系列游戏中一座座精致复原的历史建筑，让玩家们看到了历史的真实。甚至，在巴黎圣母院失火之后的复原工作中，《刺客信条·大革命》中精确复制的巴黎圣母院也起到了巨大的作用。</p>
+<h2>游戏是否需要历史</h2>
+<p>游戏与历史的关联也许并不像我们想的那般泾渭分明，游戏往往植根于历史，又再其中添上了许多独具特色的视角。这些自由的视角，让玩家能接触到更为丰富的情节与故事。</p>
+<p>历史之于游戏，乃至其它体裁的作品，都是一座丰富的故事素材库，这座素材库里的材料是已经确保了发生可能性的，从中选取片段加以二次创作是一种很好的表达新内容的途径。这能在保证玩家的可接受性上保证设定、背景、文化的丰富程度。</p>
+<p>就好像作为中国人，有较大部分的人读网络小说是读不惯西方魔法世界的设定的，像我就是更爱看仙侠。人需要接受了设定与背景，才能去感受作品。</p>
+<ul>
+<li>有的时候，是观赏者去学习这些作品的设定与文化，然后进一步体悟它，有部分中国人爱看日本流行的轻小说，而大部分中国人看不来的，缺少相应的设定与文化的背景，是不能理解艺术形式中的很多内容的；</li>
+<li>有的时候，是创作中去做一些本土化的工作。像各种电影的翻拍，有的让人叫好，有的只会让人觉得生硬，便是取决于它是否合乎大部分观赏者认同的文化和设定。</li>
+</ul>
+<p>人习惯于去依据已有的文化基础，去理解作品。所以一个好的游戏，它需要一个能支撑得住的背景，让人能够更好地接受。这个背景不能太过于脱离真实的世界，同时又需要在其中构建一个更吸引人的内核。这个背景若是纯属虚构，太丰富了容易出现让人不能很好接受的细节，太简单了，又失了趣味，所以直接从历史中取材，是一个很讨喜的做法。</p>
+<p>不管是《王者荣耀》那样借用历史人物的名字与大众印象去二次创作；还是《原神》那般提炼了许多文明的特性；抑或是直接利用真实历史事件作为背景的许多战争游戏；或者纯属虚构但是又参考了现实情况。都不失为一种好的选择。</p>
+<p>大多数情况下，游戏与历史，便是这般，扎根于其中，有游离于其外。如同搔痒，不宜轻，亦不宜重。</p>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/4" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:28:41+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/2</id><title>VS code C语言开发环境记录</title><updated>2022-10-24T10:35:37.162443+00:00</updated><content type="html"><![CDATA[<ul>
+<li>clangd插件实现C语言的语法高亮，需要有clangd作为语言服务器。</li>
+<li>make构建的项目需要用bear或者compiledb给clangd插件生成编译数据库，也可以直接用cmake。</li>
+<li>波形查看插件，写verilog时可以直接在vs code仿真</li>
+<li>配置良好的终端，可以完成一切事情</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/2" rel="alternate"/><category term="学习"/><published>2022-05-13T09:57:54+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/gitblog/issues/1</id><title>从Windows到Manjaro</title><updated>2022-10-24T10:35:37.239912+00:00</updated><content type="html"><![CDATA[<h1>折腾记录</h1>
+<h2>Windows</h2>
+<p>去年还是在用Windows的，写程序也大都在Visual Studio下面写，轻量一点就是Dev Cpp了。</p>
+<p>虽然我有同学在Windows下的开发环境配置的很不错，但是也可能是我买的电脑的原因，17寸的游戏本，RTX2080S，没有核显，i7 10750H，别说Visual Studio我开个tim的登陆界面都要风扇狂转，离开了电源我就只能存活四十分钟。</p>
+<h2>macOS</h2>
+<p>于是我看上了m1的macbook，这东西确实能敲，买来半年多了，我的Windows基本上就沦为打游戏的工具了，macOS有媲美Linux的终端，虽然很多人说macOS和Linux比起来只能是玩具，但是好歹也是源自unix，大部分终端命令都是有的。</p>
+<p>配合vs code很多编码任务都变得很轻量化，文件存放的逻辑也比Windows更符合我的直觉，而且也不用像Visual Studio一样存很多工程相关的文件。</p>
+<p>另外可以记录一下我现在的vs code配置，下一个issues就写一下 <a href="https://imhujj.cc/content.html?id=2">vs code开发环境记录</a> 吧。</p>
+<p>再之后又碰到了一些mac上不好配置环境，需要上Linux的事情，于是我用parallels建了个ubuntu，vscode连上去耍，说实在，mac的parallels desktop体验真的是好，我就一直全屏开着，需要的时候从别的桌面划过去，不需要图形界面的时候还可以<code>sudo systemctl set-default multiuser.target</code>来设置以多用户模式启动，再开一个htop，就帅起来了。</p>
+<h2>Linux（WSL、虚拟机等）</h2>
+<p>但是Windows就闲置了，而且有些东西m1是arm芯片，是耍不了的，于是我打算在Windows笔记本上也配置好开发环境，我尝试了wsl，很久以前也用过vmware，但是体验都没有mac上的好。</p>
+<p>同时，Windows给我的感觉越来越笨重了，我的机器配置这么高，Windows跑起来的卡顿还很离谱，Windows最喜欢的是打开一些应用先显示一个透明的框，然后加载界面，有时候卡死了就会把透明框边吃白边黑心的框，这种情况在我打开QQ、vs code、Visual Studio时都碰到过，最离谱的是碰到edge浏览器卡成这样，我不认为这是一个正常的现象。</p>
+<p>于是我胆子肥了，我重装了系统，给它整了个了ubuntu，我发现Linux对比Windows确实有更好的平均流畅度，为什么要说平均呢，因为Windows卡在它更多更重的服务，它是一辆拖拉机，马力很大但是自己也重，ubuntu就是一辆学步车，它没有那么多的显示优化，gnome本身甚至都很卡顿，但是它不会经常因为太重的任务而卡死。</p>
+<p>##Manjaro</p>
+<p>再然后我就在网友的推荐下入坑了manjaro kde，这东西确实比ubuntu好耍，ubuntu已经是很面向日常用户了，可以在gui里更改apt的源，manjaro更进一步，没有gui的时候也不能累到用户，它能用<code>pacman-mirrors</code>命令直接换源，还能先给你测速排序，它的包管理也对依赖有更好的支持，相当于它背靠着arch系的资源，又实现了类似ubuntu的理念。</p>
+<p>另外就是kde，确实比起ubuntu的gnome，又好看，又快。我也不知道是ubuntu的原因还是gnome。</p>
+<p>不过目前manjaro kde有几个点我还是不太舒服。</p>
+<ul>
+<li>我的代理用的是clash-for-windows，在使用它复制终端代理命令时，鼠标点击会被屏蔽，包括应用和其他程序，点几下之后其他程序会正常，但是该应用不会，要等待一段时间之后，弹出通知说复制到剪贴板，一切才能恢复正常。</li>
+<li>显卡和显示器支持不太好，开机进入欢迎界面时，会黑屏闪烁一下，在开启了300Hz刷新率之后会出现，使用60Hz则不会，估计是开启开机之后才调整的刷新率，调整的时候显示器短暂的不能工作。</li>
+<li>QQ、微信安装出问题，估计是个别依靠下载不了，paru、yay、pacman都不行，后需要么就是wine要么就是手动下载，但是用得不多，也正好当作断网时间了，远离互联网的喧嚣。</li>
+<li>除了两个不舒服的点，还有一件事就是，配置真累啊</li>
+</ul>
+<p>我开了 <a href="https://github.com/HuJj-NB/Manjaro-Configuring">这个仓库</a> 来记录配置的过程，这个仓库里的过程并不全是我的操作过程，我试图建立一个部署脚本，所以，我尽量把我的操作变成了命令，然后再安装应用和配置间的依赖进行了一定的排序，比如说还没安装代理的时候不会有github相关的命令。</p>
+<p>巧的是我依靠回忆和<code>C-r</code>大致记录下了我的配置过程之后，我系统崩了，我重装的时候没有格式化<code>/home</code>目录，觉得是内核崩了，然后开机发现还是不行，然后就彻底重装，再按照我记录的步骤走了一次，也检查出一些记录的错误，但是不幸的系统马上又崩了。我找了半天资料才发现是显卡驱动的问题，但是我的驱动一直没换，移植正常，所以应该是我刚下的显卡管理应用的问题，卸载之后果然正常了。</p>
+<h2>后记</h2>
+<p>从WSL到Manjaro，我的配置过程经历了整个五一假期，差不多有五天，我最后还按照b站的视频给我的系统做了十足的美化，抛开代理中复制命令卡死的现象，它的可用性和流畅度都很让我满意，有意思的是，它比Windows省电，能多用上一个小时。</p>
+<p>后续的话，Manjaro将会作为我的主力系统，我也会继续优化它的体验，目前来说还有几个TODO：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> vim的配置的改进</li>
+<li><input disabled="" type="checkbox"> 部署脚本的编写</li>
+</ul>
+]]></content><link href="https://github.com/HuJJ-NB/gitblog/issues/1" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-05-13T09:52:35+00:00</published></entry></feed>
