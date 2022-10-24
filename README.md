@@ -42,10 +42,10 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/gitblog/master
 
 ## TODO
 
-TODO list from [新学期新计划](https://github.com/HuJJ-NB/gitblog/issues/18) --0 jobs done --2 jobs to do
+TODO list from [新学期新计划](https://github.com/HuJJ-NB/gitblog/issues/18) --1 jobs done --1 jobs to do
 
+- [x] os比赛
 - [ ] [训练营](https://github.com/LearningOS/rust-based-os-comp2022/)
-- [ ] os比赛
 
 TODO list from [编译器](https://github.com/HuJJ-NB/gitblog/issues/13) --0 jobs done --5 jobs to do
 
