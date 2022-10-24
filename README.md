@@ -15,6 +15,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 > 
 > [友情链接](https://github.com/HuJJ-NB/HuJJ-NB/issues/6)
 > 
+
 ## 最近更新
 
 - [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --2022-10-24
@@ -94,4 +95,5 @@ TODO list from [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/
 - [ ] 部署脚本的编写
 
 ---
+
 Thanks for [yihong0618](https://github/com/yihong0618/gitblog)
