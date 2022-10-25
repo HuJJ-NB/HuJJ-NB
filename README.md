@@ -78,9 +78,9 @@ TODO list from [不能再摆了](https://github.com/HuJJ-NB/HuJJ-NB/issues/12) -
 - [ ] 撸完编译器 #13
 - [ ] 一生一芯继续写
 
-TODO list from [博客搭建](https://github.com/HuJJ-NB/HuJJ-NB/issues/11) --0 jobs done --2 jobs to do
+TODO list from [博客搭建](https://github.com/HuJJ-NB/HuJJ-NB/issues/11) --1 jobs done --1 jobs to do
 
-- [ ] 开发分支与master分支分离
+- [x] 开发分支与master分支分离
 - [ ] 在`get_issues()`中判断作者，减掉`is_me()`函数
 
 TODO list from [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --0 jobs done --4 jobs to do
