@@ -52,6 +52,6 @@
 
 ---
 
-> [{c.user.login}]({c.user.html_url})
+> [HuJJ-NB](https://github.com/HuJJ-NB)
 
-关闭 TODO
+没用 manjaro 了，关闭 TODO
