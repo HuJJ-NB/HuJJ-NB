@@ -19,7 +19,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## 最近更新
 
-- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
+- [写在 2023 学年春学期期末](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
 - [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --2022-10-24
 - [PD虚拟机Parallels Tools和内核make install的冲突](https://github.com/HuJJ-NB/HuJJ-NB/issues/17) --2022-09-06
 - [2022下学期开学一周总结](https://github.com/HuJJ-NB/HuJJ-NB/issues/16) --2022-09-06
@@ -27,7 +27,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## 学习
 
-- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
+- [写在 2023 学年春学期期末](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
 - [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --2022-10-24
 - [PD虚拟机Parallels Tools和内核make install的冲突](https://github.com/HuJJ-NB/HuJJ-NB/issues/17) --2022-09-06
 - [2022下学期开学一周总结](https://github.com/HuJJ-NB/HuJJ-NB/issues/16) --2022-09-06
@@ -43,7 +43,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## 工作
 
-- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
+- [写在 2023 学年春学期期末](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
 
 ## 琐记
 
@@ -55,7 +55,7 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## TODO
 
-TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --0 jobs done --5 jobs to do
+TODO list from [写在 2023 学年春学期期末](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --0 jobs done --5 jobs to do
 
 - [ ] 编译器大赛
 - [ ] 一生一芯
