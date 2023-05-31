@@ -59,11 +59,6 @@ TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) -
 - [ ] 实习
 - [ ] 毕设
 
-TODO list from [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --0 jobs done --2 jobs to do
-
-- [ ] [训练营](https://github.com/LearningOS/rust-based-os-comp2022/)
-- [ ] os比赛
-
 TODO list from [编译器](https://github.com/HuJJ-NB/HuJJ-NB/issues/13) --0 jobs done --5 jobs to do
 
 - [ ] 生成LR(1)项目集
