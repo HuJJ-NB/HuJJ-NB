@@ -41,6 +41,10 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 </details>
 
+## 工作
+
+- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
+
 ## 琐记
 
 - [复工](https://github.com/HuJJ-NB/HuJJ-NB/issues/15) --2022-08-09
