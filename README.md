@@ -59,33 +59,6 @@ TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) -
 - [ ] 实习
 - [ ] 毕设
 
-TODO list from [不能再摆了](https://github.com/HuJJ-NB/HuJJ-NB/issues/12) --8 jobs done --4 jobs to do
-
-- [x] 公选课大作业
-- [x] 数据库DBMS研究论文
-- [x] 编译原理作业
-- [x] 编译原理算法实验
-- [x] 编译器开发
-- [x] 计组思政
-- [x] 计网实验
-- [x] 计网思政
-- [ ] 跟着B站的视频学一下vim开发环境的插件配置
-- [ ] 跟着[RedBase](https://web.stanford.edu/class/cs346/2015/redbase.html)撸一个数据库
-- [ ] 撸完编译器 #13
-- [ ] 一生一芯继续写
-
-TODO list from [博客搭建](https://github.com/HuJJ-NB/HuJJ-NB/issues/11) --1 jobs done --1 jobs to do
-
-- [x] 开发分支与master分支分离
-- [ ] 在`get_issues()`中判断作者，减掉`is_me()`函数
-
-TODO list from [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --1 jobs done --3 jobs to do
-
-- [x] vim下的C开发环境
-- [ ] verilog工作环境
-- [ ] vivado安装与vscode配置
-- [ ] ranger和fzf的配置
-
 TODO list from [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/1) --1 jobs done --1 jobs to do
 
 - [x] vim的配置的改进
