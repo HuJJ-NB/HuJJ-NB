@@ -1,4 +1,4 @@
-# [从Windows到Manjaro](https://github.com/HuJJ-NB/gitblog/issues/1)
+# [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/1)
 
 # 折腾记录
 ## Windows
@@ -49,3 +49,9 @@
 
 - [x] vim的配置的改进
 - [ ] 部署脚本的编写
+
+---
+
+> [{c.user.login}]({c.user.html_url})
+
+关闭 TODO

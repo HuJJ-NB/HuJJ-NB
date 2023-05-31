@@ -59,11 +59,6 @@ TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) -
 - [ ] 实习
 - [ ] 毕设
 
-TODO list from [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/1) --1 jobs done --1 jobs to do
-
-- [x] vim的配置的改进
-- [ ] 部署脚本的编写
-
 ---
 
 Thanks for [yihong0618](https://github/com/yihong0618/gitblog)
