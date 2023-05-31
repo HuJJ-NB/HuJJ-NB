@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/HuJJ-NB/HuJJ-NB</id><title>RSS feed of HuJJ-NB's HuJJ-NB</title><updated>2023-05-31T16:20:10.260259+00:00</updated><author><name>yihong0618</name><email>zouzou0208@gmail.com</email></author><link href="https://github.com/HuJJ-NB/HuJJ-NB"/><link href="https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/20</id><title>好久没写了</title><updated>2023-05-31T16:20:10.478394+00:00</updated><content type="html"><![CDATA[<h2>近期进展</h2>
+<feed xmlns="http://www.w3.org/2005/Atom"><id>https://github.com/HuJJ-NB/HuJJ-NB</id><title>RSS feed of HuJJ-NB's HuJJ-NB</title><updated>2023-05-31T16:23:31.799232+00:00</updated><author><name>yihong0618</name><email>zouzou0208@gmail.com</email></author><link href="https://github.com/HuJJ-NB/HuJJ-NB"/><link href="https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master/feed.xml" rel="self"/><generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/20</id><title>好久没写了</title><updated>2023-05-31T16:23:32.108384+00:00</updated><content type="html"><![CDATA[<h2>近期进展</h2>
 <ul>
 <li>正在编译器设计大赛，目前基本跑通了，正在打磨代码，后续还需要做一些优化方面的工作。</li>
 <li>工作环境从 vs code 移到了 neovim，顺带一提 neovim 能接 clangd 实在是太爽了，貌似 emacs 能做的事情也很多，后续如果转战 Linux 的实体机也许可以试一试，虚拟机的性能感觉还是 vim 比较舒服。</li>
@@ -16,7 +16,7 @@
 <li><input disabled="" type="checkbox"> 实习</li>
 <li><input disabled="" type="checkbox"> 毕设</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/20" rel="alternate"/><published>2023-05-31T15:56:58+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/18</id><title>新学期新计划</title><updated>2023-05-31T16:20:10.571352+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/20" rel="alternate"/><published>2023-05-31T15:56:58+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/18</id><title>新学期新计划</title><updated>2023-05-31T16:23:32.273489+00:00</updated><content type="html"><![CDATA[<ul>
 <li>学校老师这边有个项目</li>
 <li>
 操作系统比赛<ul>
@@ -25,7 +25,7 @@
 </ul>
 </li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/18" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-10-24T03:00:57+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/17</id><title>PD虚拟机Parallels Tools和内核make install的冲突</title><updated>2023-05-31T16:20:10.696019+00:00</updated><content type="html"><![CDATA[<p>一开始发现错误是每次<code>make</code>都会出现一个报错，但是重新<code>make</code>就好了。部分错误信息大致如下：</p>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/18" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-10-24T03:00:57+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/17</id><title>PD虚拟机Parallels Tools和内核make install的冲突</title><updated>2023-05-31T16:23:32.443627+00:00</updated><content type="html"><![CDATA[<p>一开始发现错误是每次<code>make</code>都会出现一个报错，但是重新<code>make</code>就好了。部分错误信息大致如下：</p>
 <pre><code class="language-shell">scripts/selinux/mdp/mdp.c:2
     #include &lt;generic/autoconf.h&gt;
              ^～～～～～～～～～～^
@@ -36,7 +36,7 @@
 <p>观察这个阶段的报错，发现<code>Error: xxxxxxxx</code>和<code>parallels tools</code>有关，什么二进制找不到什么的，然后还有什么构建失败。根据错误信息查看了<code>/var/log/parallels-tools-install.log</code>，里面说编译错误的文件路径根本不存在，难以跟踪。</p>
 <p>没有研究<code>make install</code>的具体过程，可以肯定安装<code>parallels tools</code>之后，构建内核时试图编译<code>parallels tools</code>，必然会导致问题发生。解决方案大致为两种：不安装<code>parallels tools</code>；避免构建内核时编译<code>parallels tools</code>。</p>
 <p>细致研究<code>make install</code>的流程之后应该会有其他更优雅的办法，目前暂且存疑。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/17" rel="alternate"/><category term="学习"/><published>2022-09-06T15:34:53+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/16</id><title>2022下学期开学一周总结</title><updated>2023-05-31T16:20:10.796906+00:00</updated><content type="html"><![CDATA[<blockquote>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/17" rel="alternate"/><category term="学习"/><published>2022-09-06T15:34:53+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/16</id><title>2022下学期开学一周总结</title><updated>2023-05-31T16:23:32.590147+00:00</updated><content type="html"><![CDATA[<blockquote>
 <p>暑假复工三天之后又摸鱼了</p>
 </blockquote>
 <p>这周在看<em><strong>计算机系统基础</strong></em>，貌似内容都学过，慢慢看了一段时间，之后打算跳着看了。但是，这本书可以说拿来启蒙是本很不错的书，很多东西能联系起来很系统地阐述，有些思想也很深入，或者说一些概念在之前的学习中都已经在我的脑海里了，但是很难表达，书里的说法我认为很贴切。</p>
@@ -49,14 +49,14 @@
 <p>目前对于构建内核的流程，大体上是用<code>make oldconfig</code>将可用的<code>.config</code>文件拷贝到源码根目录，再通过<code>make menuconfig</code>做一些自定义，之后<code>make -jx &amp;&amp; make modules_install -jx INSTALL_MOD_STRIP=1 &amp;&amp; make install</code>，若是有构件头文件库的需求，还需要<code>make headers -jx &amp;&amp; make headers_install INSTALL_HDR_PATH=/usr</code>。</p>
 <p><code>INSTALL_MOD_STRIP=1</code>这个选项是对模块进行裁剪，排除不必要的模块，防止之后<code>make install</code>生成的镜像过大，启动过慢甚至无法启动。</p>
 <p><code>INSTALL_HDR_PATH=/usr</code>这个选项是定义库文件安装的位置。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/16" rel="alternate"/><category term="学习"/><published>2022-09-06T05:53:23+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/15</id><title>复工</title><updated>2023-05-31T16:20:10.909851+00:00</updated><content type="html"><![CDATA[<p>终于开始干活了，暑假还有那么二十天，先搞搞编译器吧。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/15" rel="alternate"/><category term="琐记"/><published>2022-08-09T05:45:43+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/14</id><title>22年 夏 7月21日</title><updated>2023-05-31T16:20:11.000244+00:00</updated><content type="html"><![CDATA[<p>这个假期强鼓精神磨了两个星期洋工，又开始吃了睡睡了吃了。也不知道能不能打起精神好好做事情。</p>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/16" rel="alternate"/><category term="学习"/><published>2022-09-06T05:53:23+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/15</id><title>复工</title><updated>2023-05-31T16:23:32.734926+00:00</updated><content type="html"><![CDATA[<p>终于开始干活了，暑假还有那么二十天，先搞搞编译器吧。</p>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/15" rel="alternate"/><category term="琐记"/><published>2022-08-09T05:45:43+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/14</id><title>22年 夏 7月21日</title><updated>2023-05-31T16:23:32.870731+00:00</updated><content type="html"><![CDATA[<p>这个假期强鼓精神磨了两个星期洋工，又开始吃了睡睡了吃了。也不知道能不能打起精神好好做事情。</p>
 <p>在看长夜余火，很不错的小说，还挺有意思，男主喜欢的歌都还挺有味道。<strong>新裤子乐队</strong>的<em><strong>没有理想的人不伤心</strong></em>，好听。</p>
 <p>昨天家里有点麻烦事，晚上边想事情边看小说，看到三四点，剧情突然有了点转折，看得一个激灵。坐起来开了灯，戴上耳机听着歌，边看。突然就感觉很有力量，挺他妈带感。</p>
 <p>早上要帮忙解决那件麻烦事，但是通了宵有点困，下楼买了4块钱的大瓶可乐，很冰的那种，拿来提神。但在走在小区楼下突然不想回家，就在楼下走，戴着耳机，看着小说，喝着可乐。</p>
 <p>有人晨跑，带着运动耳机，一圈又一圈，在我边上路过许多次，她可能觉得我很奇怪，大清早的，穿着拖鞋，戴着耳机，看着手机，喝着可乐绕圈。</p>
 <p>中间有一段没有树荫，太阳洒在脸上，八点四十五的阳光，真他妈热。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/14" rel="alternate"/><category term="琐记"/><published>2022-07-21T02:22:51+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/13</id><title>编译器</title><updated>2023-05-31T16:20:11.096244+00:00</updated><content type="html"><![CDATA[<p>记录一下编译原理课大作业。</p>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/14" rel="alternate"/><category term="琐记"/><published>2022-07-21T02:22:51+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/13</id><title>编译器</title><updated>2023-05-31T16:23:33.003790+00:00</updated><content type="html"><![CDATA[<p>记录一下编译原理课大作业。</p>
 <h2>进度</h2>
 <p>目前只做了词法分析和语法分析，其中词法分析用了PCRE的库，语法分析采用递归下降的办法自顶向下实现。</p>
 <h2>词法分析</h2>
@@ -76,7 +76,7 @@
 <li><input disabled="" type="checkbox"> 编译后端（暂定目标为生成risc-V IM64指令集的ELF）</li>
 <li><input disabled="" type="checkbox"> 更符合工业标准的代码</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/13" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-06-10T18:04:49+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/12</id><title>不能再摆了</title><updated>2023-05-31T16:20:11.239017+00:00</updated><content type="html"><![CDATA[<h2>好久没写了</h2>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/13" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-06-10T18:04:49+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/12</id><title>不能再摆了</title><updated>2023-05-31T16:23:33.153840+00:00</updated><content type="html"><![CDATA[<h2>好久没写了</h2>
 <p>学期初我一天能肝十五六个小时，不管什么课都抱着电脑敲敲敲。</p>
 <p>四月多的时候女朋友说我陪她太少了，就说陪她玩，玩了几天五一放假接着玩。回来正好上一个小项目写得差不多，下一个还没开始，动力直接锐减，于是连着一个月每天在寝室刷知乎。</p>
 <p>一刷知乎吧，就停不下来，作息也乱了，DDL也开始攒了，现在期末了，啥都干不完，尤其是学期初被我拿来敲代码的几门专业课，预习的压力就上来了。</p>
@@ -100,11 +100,11 @@
 <li><input disabled="" type="checkbox"> 撸完编译器 #13</li>
 <li><input disabled="" type="checkbox"> 一生一芯继续写</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/12" rel="alternate"/><category term="TODO"/><category term="琐记"/><published>2022-06-06T15:43:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/11</id><title>博客搭建</title><updated>2023-05-31T16:20:11.347867+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/12" rel="alternate"/><category term="TODO"/><category term="琐记"/><published>2022-06-06T15:43:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/11</id><title>博客搭建</title><updated>2023-05-31T16:23:33.298818+00:00</updated><content type="html"><![CDATA[<ul>
 <li><input checked="" disabled="" type="checkbox"> 开发分支与master分支分离</li>
 <li><input disabled="" type="checkbox"> 在<code>get_issues()</code>中判断作者，减掉<code>is_me()</code>函数</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/11" rel="alternate"/><category term="TODO"/><published>2022-05-13T19:46:38+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/7</id><title>工作流优化</title><updated>2023-05-31T16:20:11.441656+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/11" rel="alternate"/><category term="TODO"/><published>2022-05-13T19:46:38+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/7</id><title>工作流优化</title><updated>2023-05-31T16:23:33.445853+00:00</updated><content type="html"><![CDATA[<ul>
 <li>
 vscode下工作流优化<ul>
 <li><input disabled="" type="checkbox"> verilog工作环境</li>
@@ -118,12 +118,12 @@ shell下工作流优化<ul>
 </ul>
 </li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/7" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-05-13T11:11:26+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/6</id><title>友情链接</title><updated>2023-05-31T16:20:11.526311+00:00</updated><content type="html"><![CDATA[<p>这个 Issue 是友情链接的 Issue, 如果你想加到友情链接里，请在这条 Issue 上评论，我打心后会自动加到友情链接里。感谢大家。</p>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/7" rel="alternate"/><category term="TODO"/><category term="学习"/><published>2022-05-13T11:11:26+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/6</id><title>友情链接</title><updated>2023-05-31T16:23:33.596730+00:00</updated><content type="html"><![CDATA[<p>这个 Issue 是友情链接的 Issue, 如果你想加到友情链接里，请在这条 Issue 上评论，我打心后会自动加到友情链接里。感谢大家。</p>
 <p>格式请参考我的 comment</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> switch</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/6" rel="alternate"/><category term="Friends"/><published>2022-05-13T10:56:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/5</id><title>记录的价值</title><updated>2023-05-31T16:20:11.613908+00:00</updated><content type="html"><![CDATA[<h1>论记录中蕴藏的震撼人心的时间力量</h1>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/6" rel="alternate"/><category term="Friends"/><published>2022-05-13T10:56:31+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/5</id><title>记录的价值</title><updated>2023-05-31T16:23:33.730669+00:00</updated><content type="html"><![CDATA[<h1>论记录中蕴藏的震撼人心的时间力量</h1>
 <h2>2022年看1920年的上海</h2>
 <p>上近代史课，老师放了一段1920年的上海的视频，泛黄的画面，镜头应是一人站立手持，正对着面前的街道拍摄，从一条街一路后退，路上有像骆驼祥子一样的车夫，拉着客人，也有衣着华贵的妇人穿过街道，上海外滩的路旁，一辆辆轿车停放整齐，这时老师说，那个时候亚洲最繁华的就是上海，整个东方没有地方能见到几辆轿车。</p>
 <p>我模糊地感受到拍视频的人似乎很自豪，他们站在时代之上。这段录像好像承载了一种现在再也找不回的东西，从现在来看，现在的上海更加繁华，甚至一些新一线城市二线也有当时上海的繁荣，站在时间之后回顾，他们的自豪，茫茫然中带着的那一点苍白无力，反而更让时间显得不可阻挡。</p>
@@ -135,7 +135,7 @@ shell下工作流优化<ul>
 <hr />
 <h3>Tips</h3>
 <p>想表达感慨，但是发现总是词不达意，想了想，算了吧，多几个哈姆雷特也好。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/5" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:51:01+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/4</id><title>电子游戏与数字素养-对于游戏与历史的思考</title><updated>2023-05-31T16:20:11.715979+00:00</updated><content type="html"><![CDATA[<h1>游戏与历史</h1>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/5" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:51:01+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/4</id><title>电子游戏与数字素养-对于游戏与历史的思考</title><updated>2023-05-31T16:23:33.879774+00:00</updated><content type="html"><![CDATA[<h1>游戏与历史</h1>
 <h2>游戏，重构历史？歪曲历史？</h2>
 <p>说到游戏与历史，再加上重构这个词，我想到的第一件事是，没多久之前，有一很流行的言论是《王者荣耀》歪曲历史事实，动摇了青少年的历史观念，破坏了民族的共同文化记忆的传承。</p>
 <p>历史，仿佛是很严肃的事，游戏的载体，尤其是《王者荣耀》这般对历史人物的形象、关系等做了不同程度的二次创作的作品，仿佛便是在亵渎历史的严肃性，仿佛便是在伤害史实、伤害传统文化。</p>
@@ -168,13 +168,13 @@ shell下工作流优化<ul>
 <p>人习惯于去依据已有的文化基础，去理解作品。所以一个好的游戏，它需要一个能支撑得住的背景，让人能够更好地接受。这个背景不能太过于脱离真实的世界，同时又需要在其中构建一个更吸引人的内核。这个背景若是纯属虚构，太丰富了容易出现让人不能很好接受的细节，太简单了，又失了趣味，所以直接从历史中取材，是一个很讨喜的做法。</p>
 <p>不管是《王者荣耀》那样借用历史人物的名字与大众印象去二次创作；还是《原神》那般提炼了许多文明的特性；抑或是直接利用真实历史事件作为背景的许多战争游戏；或者纯属虚构但是又参考了现实情况。都不失为一种好的选择。</p>
 <p>大多数情况下，游戏与历史，便是这般，扎根于其中，有游离于其外。如同搔痒，不宜轻，亦不宜重。</p>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/4" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:28:41+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/2</id><title>VS code C语言开发环境记录</title><updated>2023-05-31T16:20:11.812881+00:00</updated><content type="html"><![CDATA[<ul>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/4" rel="alternate"/><category term="琐记"/><published>2022-05-13T10:28:41+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/2</id><title>VS code C语言开发环境记录</title><updated>2023-05-31T16:23:34.023061+00:00</updated><content type="html"><![CDATA[<ul>
 <li>clangd插件实现C语言的语法高亮，需要有clangd作为语言服务器。</li>
 <li>make构建的项目需要用bear或者compiledb给clangd插件生成编译数据库，也可以直接用cmake。</li>
 <li>波形查看插件，写verilog时可以直接在vs code仿真</li>
 <li>配置良好的终端，可以完成一切事情</li>
 </ul>
-]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/2" rel="alternate"/><category term="学习"/><published>2022-05-13T09:57:54+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/1</id><title>从Windows到Manjaro</title><updated>2023-05-31T16:20:11.906290+00:00</updated><content type="html"><![CDATA[<h1>折腾记录</h1>
+]]></content><link href="https://github.com/HuJJ-NB/HuJJ-NB/issues/2" rel="alternate"/><category term="学习"/><published>2022-05-13T09:57:54+00:00</published></entry><entry><id>https://github.com/HuJJ-NB/HuJJ-NB/issues/1</id><title>从Windows到Manjaro</title><updated>2023-05-31T16:23:34.204842+00:00</updated><content type="html"><![CDATA[<h1>折腾记录</h1>
 <h2>Windows</h2>
 <p>去年还是在用Windows的，写程序也大都在Visual Studio下面写，轻量一点就是Dev Cpp了。</p>
 <p>虽然我有同学在Windows下的开发环境配置的很不错，但是也可能是我买的电脑的原因，17寸的游戏本，RTX2080S，没有核显，i7 10750H，别说Visual Studio我开个tim的登陆界面都要风扇狂转，离开了电源我就只能存活四十分钟。</p>
