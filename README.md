@@ -19,11 +19,11 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## 最近更新
 
+- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
 - [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --2022-10-24
 - [PD虚拟机Parallels Tools和内核make install的冲突](https://github.com/HuJJ-NB/HuJJ-NB/issues/17) --2022-09-06
 - [2022下学期开学一周总结](https://github.com/HuJJ-NB/HuJJ-NB/issues/16) --2022-09-06
 - [复工](https://github.com/HuJJ-NB/HuJJ-NB/issues/15) --2022-08-09
-- [22年 夏 7月21日](https://github.com/HuJJ-NB/HuJJ-NB/issues/14) --2022-07-21
 
 ## 学习
 
@@ -83,11 +83,11 @@ TODO list from [博客搭建](https://github.com/HuJJ-NB/HuJJ-NB/issues/11) --1 
 - [x] 开发分支与master分支分离
 - [ ] 在`get_issues()`中判断作者，减掉`is_me()`函数
 
-TODO list from [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --0 jobs done --4 jobs to do
+TODO list from [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --1 jobs done --3 jobs to do
 
+- [x] vim下的C开发环境
 - [ ] verilog工作环境
 - [ ] vivado安装与vscode配置
-- [ ] vim下的C开发环境
 - [ ] ranger和fzf的配置
 
 TODO list from [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/1) --1 jobs done --1 jobs to do
