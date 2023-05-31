@@ -59,14 +59,6 @@ TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) -
 - [ ] 实习
 - [ ] 毕设
 
-TODO list from [编译器](https://github.com/HuJJ-NB/HuJJ-NB/issues/13) --0 jobs done --5 jobs to do
-
-- [ ] 生成LR(1)项目集
-- [ ] 语义分析
-- [ ] 中间代码生成
-- [ ] 编译后端（暂定目标为生成risc-V IM64指令集的ELF）
-- [ ] 更符合工业标准的代码
-
 TODO list from [不能再摆了](https://github.com/HuJJ-NB/HuJJ-NB/issues/12) --8 jobs done --4 jobs to do
 
 - [x] 公选课大作业
