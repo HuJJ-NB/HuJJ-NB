@@ -10,7 +10,7 @@ from lxml.etree import CDATA
 
 MD_HEAD = """# Gitblog
 
-My personal blog using issues and GitHub Actions（随意转载，无需署名）
+胡家骏的个人博客（这个人写的大部分是废话 :P）
 
 Subscribe to [RSS Feed](https://raw.githubusercontent.com/{repo_name}/master/feed.xml)
 """
