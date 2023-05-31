@@ -27,14 +27,15 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 
 ## 学习
 
+- [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --2023-05-31
 - [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --2022-10-24
 - [PD虚拟机Parallels Tools和内核make install的冲突](https://github.com/HuJJ-NB/HuJJ-NB/issues/17) --2022-09-06
 - [2022下学期开学一周总结](https://github.com/HuJJ-NB/HuJJ-NB/issues/16) --2022-09-06
 - [编译器](https://github.com/HuJJ-NB/HuJJ-NB/issues/13) --2022-06-10
-- [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --2022-05-13
 
 <details><summary>显示更多</summary>
 
+- [工作流优化](https://github.com/HuJJ-NB/HuJJ-NB/issues/7) --2022-05-13
 - [VS code C语言开发环境记录](https://github.com/HuJJ-NB/HuJJ-NB/issues/2) --2022-05-13
 - [从Windows到Manjaro](https://github.com/HuJJ-NB/HuJJ-NB/issues/1) --2022-05-13
 
@@ -49,6 +50,14 @@ Subscribe to [RSS Feed](https://raw.githubusercontent.com/HuJJ-NB/HuJJ-NB/master
 - [电子游戏与数字素养-对于游戏与历史的思考](https://github.com/HuJJ-NB/HuJJ-NB/issues/4) --2022-05-13
 
 ## TODO
+
+TODO list from [好久没写了](https://github.com/HuJJ-NB/HuJJ-NB/issues/20) --0 jobs done --5 jobs to do
+
+- [ ] 编译器大赛
+- [ ] 一生一芯
+- [ ] 考研
+- [ ] 实习
+- [ ] 毕设
 
 TODO list from [新学期新计划](https://github.com/HuJJ-NB/HuJJ-NB/issues/18) --0 jobs done --2 jobs to do
 
